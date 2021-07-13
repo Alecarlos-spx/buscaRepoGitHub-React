@@ -29,7 +29,11 @@ function Repositories() {
 
                 if(index === 0){
                     return (
+                        <>
                         <span key={index}>{repository.nomeCompleto}</span>
+                        <p key={index}>Total de Repositórios Públicos - {repository.totalRepos}</p>
+                        </>
+
                     )
                 }
                 return null;

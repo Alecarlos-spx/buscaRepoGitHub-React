@@ -12,9 +12,9 @@ export default function Home() {
     
     async function handlePesquisa() {
 
-      let nome = await axios.get(`https://api.github.com/users/${usuario}`)
+      let dadosRepositorios = await axios.get(`https://api.github.com/users/${usuario}`)
         .then(response => {
-          const result = response.data.name;       
+          const result = {nome: response.data.name, repos: response.data.public_repos};
           return result;
         });
       
@@ -25,7 +25,13 @@ export default function Home() {
           const repositories = response.data;
           const repositoriesName = [];
           repositories.map((repository) => {
-            return repositoriesName.push({nome: repository.name, url: repository.html_url, login: repository.owner.login, nomeCompleto: nome});
+            return repositoriesName.push(
+              { nome: repository.name, 
+                url: repository.html_url, 
+                login: repository.owner.login, 
+                nomeCompleto: dadosRepositorios.nome,
+                totalRepos: dadosRepositorios.repos
+              });
           });
           localStorage.setItem('repositories', JSON.stringify(repositoriesName));
           setErro(false);
