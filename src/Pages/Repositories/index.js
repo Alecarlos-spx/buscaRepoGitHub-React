@@ -21,7 +21,7 @@ function Repositories() {
         }else{
             history.push('/');
         }
-    }, []);
+    }, [history]);
 
     return (
         <S.Container>
@@ -32,6 +32,7 @@ function Repositories() {
                         <span key={index}>{repository.nomeCompleto}</span>
                     )
                 }
+                return null;
                 })}
                   
             </S.Title>

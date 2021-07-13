@@ -21,4 +21,4 @@
 
 
 #Informações para Build
-  - Utilizar o comando `npm run-script build`, será criada uma pasta `build/`. 
+  - Utilizar o comando `npm react-scripts build`, será criada uma pasta `build/`. 
