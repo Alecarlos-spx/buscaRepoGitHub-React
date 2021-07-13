@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App title="Hello Gama Academy" user="Alexandre"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
