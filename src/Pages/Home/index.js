@@ -20,7 +20,7 @@ export default function Home() {
       
 
 
-      await axios.get(`https://api.github.com/users/${usuario}/repos`)
+      await axios.get(`https://api.github.com/users/${usuario}/repos?per_page=1000`)
         .then(response => {
           const repositories = response.data;
           const repositoriesName = [];
